@@ -1,0 +1,67 @@
+/*
+ * As paginas da loja (@ocahub/kit) com a cara do site: o kit traz um tema
+ * neutro em tokens --rh-*; aqui eles ganham a paleta das fotos da Andreza
+ * (marfim, vinho, coral, lavanda, dourado) e as fontes do site.
+ */
+:root {
+  --rh-font: Jost, ui-sans-serif, system-ui, sans-serif;
+  --rh-color-bg: #FBF6EE;
+  --rh-color-text: #2B2226;
+  --rh-color-muted: #6E6064;
+  --rh-color-border: #EADCCB;
+  --rh-color-surface: #FFFFFF;
+  --rh-color-accent: #C2471F;
+  --rh-color-accent-contrast: #FFFFFF;
+  --rh-radius: 20px;
+  --rh-radius-sm: 12px;
+  --rh-max-width: 1200px;
+  --rh-shadow: 0 1px 2px rgb(43 34 38 / .04), 0 12px 32px rgb(110 36 51 / .08);
+  /* Mapa astral: os elementos nos tons do site. */
+  --rh-chart-fire: #FBE3D6;
+  --rh-chart-fire-text: #A23A18;
+  --rh-chart-earth: #F4EADC;
+  --rh-chart-earth-text: #7A5A22;
+  --rh-chart-air: #ECE4F7;
+  --rh-chart-air-text: #5E4590;
+  --rh-chart-water: #E6EEF5;
+  --rh-chart-water-text: #2F5B7E;
+}
+
+/* Titulos das paginas da loja na fonte do site, em vinho. */
+.rh-form__title, .rh-shelf__title, .rh-product__name, .rh-section-title, .rh-panel__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  color: #6E2433;
+  letter-spacing: 0;
+}
+.rh-shelf__title, .rh-form__title { font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.05; }
+.rh-product__name { font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.05; }
+
+/* Botoes: pilula coral, como os do site. */
+.rh-button {
+  min-height: 48px;
+  border-radius: 999px;
+  background: #C2471F;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.rh-button:hover { background: #A23A18; opacity: 1; }
+
+/* As paginas da loja respiram como as do site. */
+.rh-shelf, .rh-product, .rh-cart, .rh-checkout, .rh-account, .rh-purchase, .rh-auth { padding-top: 48px; padding-bottom: 80px; }
+
+/* Cabecalho: sacola e conta no estilo do menu. */
+.az-header-actions { display: flex; align-items: center; gap: 1rem; }
+@media (min-width: 1024px) { .az-header-actions--mobile { display: none; } }
+.az-header-actions .rh-account-button, .az-header-actions .rh-cart-button { color: #2B2226; }
+.az-header-actions .rh-account-button:hover, .az-header-actions .rh-cart-button:hover { color: #C2471F; }
+.az-header-actions .rh-cart-button__count { background: #6E2433; color: #fff; }
+
+/* Aviso de "no carrinho" (plugins/cart.client.ts). */
+.site-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 2000;
+  max-width: calc(100vw - 32px); padding: 14px 22px; border-radius: 999px;
+  background: #221B29; color: #FBF6EE; font-size: .9rem; letter-spacing: .02em;
+}
+.site-toast-enter-active, .site-toast-leave-active { transition: opacity .2s, transform .2s; }
+.site-toast-enter-from, .site-toast-leave-to { opacity: 0; transform: translate(-50%, 8px); }

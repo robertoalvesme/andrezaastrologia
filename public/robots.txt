@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /minha-conta
+Disallow: /carrinho
+Disallow: /compras
