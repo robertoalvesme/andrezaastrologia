@@ -10,7 +10,7 @@ const year = new Date().getFullYear()
       <div>
         <BrandMark tone="ivory" />
         <p class="mt-6 max-w-sm text-sm leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Astrologia, tarot, constelação familiar e terapias integrativas: autoconhecimento como um convite para viver com mais consciência, presença e verdade.
         </p>
         <MoonPhases class="mt-8 !justify-start" />
       </div>

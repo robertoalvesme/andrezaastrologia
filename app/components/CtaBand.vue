@@ -2,8 +2,8 @@
 // Faixa de chamada final: noite estrelada com a lua, e duas acoes.
 const site = useSite()
 withDefaults(defineProps<{ title?: string, text?: string }>(), {
-  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-  text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+  title: 'Cada mapa é uma oportunidade de olhar para si por uma nova perspectiva.',
+  text: 'Escolha o atendimento e marque o seu horário, ou tire suas dúvidas comigo no WhatsApp.',
 })
 </script>
 

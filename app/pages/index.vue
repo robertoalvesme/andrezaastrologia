@@ -1,58 +1,59 @@
 <script setup lang="ts">
 // Home: quem e a Andreza, o que ela oferece (mapa astral digital, sessoes de
 // astrologia e de tarot, a loja) e como comprar - sempre com um proximo passo
-// a vista. Textos em Lorem ipsum para a cliente trocar.
+// a vista. Textos da Andreza.
 useSeoMeta({
-  title: 'Andreza Astrologia — Mapa astral, Astrologia e Tarot',
+  title: 'Andreza Astrologia — Astrologia, Tarot e Constelação Familiar',
   ogTitle: 'Andreza Astrologia',
-  description: 'Mapa astral digital, sessões de astrologia e de tarot com a Andreza, e a loja com produtos para o seu autoconhecimento.',
+  description: 'Mapa astral, revolução solar, sinastria, astrocartografia, mapa da carreira, mapa infantil, constelação familiar e tarot com a Andreza.',
   ogImage: '/img/andreza-lua.webp',
 })
 
 const site = useSite()
 const sampleOn = useState('site:sample-on', () => false)
 
-const services = [
+// Astrologia: os mapas, em cards de texto; Constelacao e Tarot: com foto e valor.
+const astrology = [
+  { icon: '☉', title: 'Mapa Astral', text: 'A foto do céu no momento do seu nascimento. Ajuda a compreender sua personalidade, missão de vida, relacionamentos e seus movimentos internos. Um convite para parar de tentar caber em expectativas externas e começar a compreender sua própria essência.' },
+  { icon: '↻', title: 'Revolução Solar', text: 'O mapa do momento em que o Sol retorna à posição do seu nascimento, marcando um novo ciclo pessoal. Mostra os temas que podem ganhar destaque entre um aniversário e outro e as áreas da vida que merecem atenção.' },
+  { icon: '♡', title: 'Sinastria Amorosa', text: 'Ajuda a compreender por que certas dinâmicas se repetem, onde estão as afinidades e quais diferenças precisam ser acolhidas. Não diz se duas pessoas foram feitas uma para a outra: oferece consciência para relações mais maduras e verdadeiras.' },
+  { icon: '✈', title: 'Astrocartografia', text: 'O seu mapa astral pelo mundo. Para quem pensa em mudar de cidade, morar fora, viajar ou estudar, ou quer compreender sua relação simbólica com diferentes lugares. Não indica um lugar perfeito: amplia a reflexão sobre onde e como construir sua vida.' },
+  { icon: '✦', title: 'Mapa da Carreira', text: 'Investiga sua relação com a vida profissional. Para quem está em transição, quer empreender, sente que está no caminho errado ou busca novas possibilidades de realização. Conhecer seus potenciais ajuda a construir caminhos com mais consciência e sentido.' },
+  { icon: '☆', title: 'Mapa Infantil', text: 'Ajuda os pais a compreenderem que nem todas as crianças sentem, aprendem ou reagem da mesma maneira. Não determina quem a criança será: oferece novas perspectivas para acolher quem ela já está descobrindo ser.' },
+]
+
+const sessions = [
   {
-    title: 'Mapa Astral Digital',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.',
-    detail: 'Leitura na sua conta',
-    image: '/img/astrologia-livro.webp',
-    alt: 'Andreza segurando um livro de astrologia, com cartas de tarot sobre a mesa',
-  },
-  {
-    title: 'Sessão de Astrologia',
-    text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    detail: 'Online · com horário marcado',
+    title: 'Constelação Familiar',
+    price: 'R$ 230,00',
+    text: 'Um olhar para situações recorrentes sob uma nova perspectiva, reconhecendo a influência das relações em sua trajetória. Não se trata de procurar culpados, mas de reconhecer os vínculos da sua história e escolher o que deseja continuar carregando e o que deseja transformar.',
     image: '/img/constelacao.webp',
-    alt: 'Andreza posicionando bonecos sobre um tabuleiro de astrologia',
+    alt: 'Andreza posicionando bonecos sobre um tabuleiro',
   },
   {
-    title: 'Sessão de Tarot',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    detail: 'Online · com horário marcado',
+    title: 'Tarot',
+    price: 'R$ 130,00',
+    text: 'O Tarot ajuda a organizar pensamentos, reconhecer sentimentos confusos e observar uma situação por ângulos diferentes. A leitura não traz previsão nem substitui suas decisões: é um espaço de escuta, reflexão e consciência para escolhas mais alinhadas com o que você deseja construir.',
     image: '/img/tarot-mesa.webp',
     alt: 'Andreza abrindo cartas de tarot sobre uma mesa de mármore',
   },
 ]
 
 const steps = [
-  { title: 'Escolha o atendimento', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.' },
-  { title: 'Pague com o Mercado Pago', text: 'Pix, cartão ou saldo. Ut enim ad minim veniam, quis nostrud exercitation.' },
-  { title: 'Agende ou receba seu mapa', text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.' },
+  { title: 'Escolha o atendimento', text: 'Veja os mapas e as sessões na loja e escolha o que faz sentido para o seu momento.' },
+  { title: 'Pague com o Mercado Pago', text: 'Pix, cartão ou saldo do Mercado Pago, em ambiente seguro.' },
+  { title: 'Agende ou envie seus dados', text: 'Nas sessões, você escolhe o horário na página da compra. Nos mapas, informa a data, a hora e a cidade de nascimento.' },
 ]
 
-const testimonials = [
-  { quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus.', name: 'Lorem I.', service: 'Mapa Astral Digital' },
-  { quote: 'Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum, donec ullamcorper.', name: 'Ipsum D.', service: 'Sessão de Tarot' },
-  { quote: 'Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.', name: 'Dolor S.', service: 'Sessão de Astrologia' },
-]
+// Sem depoimentos reais ainda: a secao so aparece quando a lista tiver itens.
+const testimonials: { quote: string, name: string, service: string }[] = []
 
 const faqs = [
-  { q: 'Os atendimentos são online?', a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit.' },
-  { q: 'Como escolho o horário da sessão?', a: 'Depois do pagamento, a página da sua compra mostra os horários livres. Cras justo odio, dapibus ac facilisis in, egestas eget quam.' },
-  { q: 'Quando recebo o meu mapa astral?', a: 'Depois do pagamento você informa a data, a hora e a cidade de nascimento. Donec sed odio dui, etiam porta sem malesuada.' },
-  { q: 'Quais formas de pagamento são aceitas?', a: 'Pix, cartão de crédito e saldo do Mercado Pago. Vestibulum id ligula porta felis euismod semper.' },
+  { q: 'Como escolho o horário da sessão?', a: 'Depois do pagamento, a página da sua compra mostra os horários livres. É só escolher o que for melhor para você.' },
+  { q: 'O que preciso para fazer um mapa?', a: 'A data, a hora e a cidade do seu nascimento. A hora faz diferença: se puder, confira na certidão de nascimento.' },
+  { q: 'O Tarot faz previsões?', a: 'Não. A leitura não tem o propósito de trazer previsão, não determina o comportamento de terceiros e não substitui suas decisões. Ela oferece um espaço de escuta, reflexão e consciência.' },
+  { q: 'A Sinastria diz se fomos feitos um para o outro?', a: 'Não, e também não garante a duração de uma relação. O propósito é oferecer consciência para construir relações mais maduras, respeitosas e verdadeiras.' },
+  { q: 'Quais formas de pagamento são aceitas?', a: 'Pix, cartão de crédito e saldo do Mercado Pago.' },
 ]
 </script>
 
@@ -64,12 +65,12 @@ const faqs = [
       <div class="pointer-events-none absolute -right-24 bottom-0 h-[420px] w-[420px] rounded-full bg-coral-soft/80 blur-3xl" aria-hidden="true" />
       <div class="container-page relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
-          <p class="eyebrow">Astrologia &amp; Tarot</p>
+          <p class="eyebrow">Astrologia · Tarot · Constelação</p>
           <h1 class="mt-5 text-5xl font-medium leading-[0.98] sm:text-6xl lg:text-7xl">
-            Lorem ipsum dolor <em class="font-normal text-coral">sit amet</em>, consectetur.
+            Olhar para si por uma <em class="font-normal text-coral">nova perspectiva</em>.
           </h1>
           <p class="lead mt-6 max-w-xl">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            Mais do que descobrir o que o futuro reserva, a proposta é compreender o presente, ampliar a consciência sobre suas escolhas e encontrar maneiras mais conscientes de viver a própria história.
           </p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row">
             <NuxtLink to="/loja" class="btn-primary">Agendar um atendimento</NuxtLink>
@@ -91,31 +92,56 @@ const faqs = [
           </div>
           <div class="card absolute -bottom-6 -left-4 flex items-center gap-3 !p-4 sm:-left-10">
             <span class="flex h-11 w-11 items-center justify-center rounded-full bg-coral-soft text-coral" aria-hidden="true">☾</span>
-            <span class="text-sm leading-tight"><b class="block font-medium text-wine">Lorem ipsum</b><span class="text-ink-soft">dolor sit amet</span></span>
+            <span class="text-sm leading-tight"><b class="block font-medium text-wine">Mapa astral</b><span class="text-ink-soft">a foto do céu do seu nascimento</span></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICOS: os tres atendimentos, cada um levando a loja -->
+    <!-- ASTROLOGIA: os mapas, cada um levando a loja -->
     <section class="bg-white" aria-labelledby="servicos-titulo">
       <div class="container-page py-20 sm:py-24">
         <div class="mx-auto max-w-2xl text-center">
-          <p class="eyebrow">Atendimentos</p>
-          <h2 id="servicos-titulo" class="section-title mt-3">Lorem ipsum dolor sit amet</h2>
-          <p class="lead mt-5">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+          <p class="eyebrow">Astrologia</p>
+          <h2 id="servicos-titulo" class="section-title mt-3">Compreender quem você é</h2>
+          <p class="lead mt-5">A astrologia nos permite compreender melhor como sentimos, pensamos, nos relacionamos e nos movimentamos pela vida. Por meio do mapa, reconhecemos potencialidades, desafios, padrões e necessidades emocionais.</p>
         </div>
 
-        <div class="mt-14 grid gap-8 md:grid-cols-3">
-          <article v-for="s in services" :key="s.title" class="group flex flex-col">
-            <div class="arch aspect-[4/3] bg-ivory-deep sm:aspect-[4/5]">
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article v-for="m in astrology" :key="m.title" class="flex flex-col rounded-3xl bg-ivory p-8">
+            <span class="flex h-12 w-12 items-center justify-center rounded-full bg-lavender-light font-display text-xl text-lavender-dark" aria-hidden="true">{{ m.icon }}</span>
+            <h3 class="mt-5 text-3xl">{{ m.title }}</h3>
+            <p class="mt-3 flex-1 leading-relaxed text-ink-soft">{{ m.text }}</p>
+            <NuxtLink to="/loja" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-coral hover:text-coral-dark">
+              Ver valores <span aria-hidden="true">→</span>
+            </NuxtLink>
+          </article>
+        </div>
+
+        <p class="mx-auto mt-12 max-w-2xl text-center font-display text-2xl italic leading-snug text-wine">
+          Cada mapa é uma oportunidade de olhar para si por uma nova perspectiva.
+        </p>
+      </div>
+    </section>
+
+    <!-- SESSOES: constelacao e tarot, com foto e valor -->
+    <section class="bg-ivory" aria-labelledby="sessoes-titulo">
+      <div class="container-page py-20 sm:py-24">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="eyebrow">Sessões</p>
+          <h2 id="sessoes-titulo" class="section-title mt-3">Constelação Familiar e Tarot</h2>
+        </div>
+
+        <div class="mt-14 grid gap-10 md:grid-cols-2">
+          <article v-for="s in sessions" :key="s.title" class="group flex flex-col">
+            <div class="arch aspect-[4/3] bg-ivory-deep sm:aspect-[5/4]">
               <img :src="s.image" :alt="s.alt" class="h-full w-full object-cover object-[50%_30%] transition-transform duration-700 group-hover:scale-105" loading="lazy" width="1000" height="1500">
             </div>
-            <p class="mt-6 text-xs font-medium uppercase tracking-[0.24em] text-gold-dark">{{ s.detail }}</p>
+            <p class="mt-6 text-xs font-medium uppercase tracking-[0.24em] text-gold-dark">Com horário marcado · {{ s.price }}</p>
             <h3 class="mt-2 text-3xl">{{ s.title }}</h3>
             <p class="mt-3 flex-1 leading-relaxed text-ink-soft">{{ s.text }}</p>
             <NuxtLink to="/loja" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-coral hover:text-coral-dark">
-              Ver valores e agendar <span aria-hidden="true">→</span>
+              Agendar <span aria-hidden="true">→</span>
             </NuxtLink>
           </article>
         </div>
@@ -128,8 +154,8 @@ const faqs = [
         <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <p class="eyebrow">Como funciona</p>
-            <h2 id="como-titulo" class="section-title mt-3">Lorem ipsum em três passos</h2>
-            <p class="lead mt-5">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+            <h2 id="como-titulo" class="section-title mt-3">Em três passos</h2>
+            <p class="lead mt-5">Tudo pelo site: da escolha do atendimento ao horário marcado.</p>
           </div>
           <ol class="grid gap-5 sm:grid-cols-3">
             <li v-for="(step, i) in steps" :key="step.title" class="card">
@@ -150,9 +176,9 @@ const faqs = [
         </div>
         <div>
           <p class="text-xs font-medium uppercase tracking-[0.28em] text-gold-light">Sobre mim</p>
-          <h2 id="sobre-titulo" class="mt-4 font-display text-4xl leading-tight text-ivory sm:text-5xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+          <h2 id="sobre-titulo" class="mt-4 font-display text-4xl leading-tight text-ivory sm:text-5xl">Uma mulher em constante transformação, apaixonada pela vida e pelos mistérios da alma humana.</h2>
           <p class="mt-6 leading-relaxed text-ivory/80">
-            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+            Sou astróloga, taróloga, consteladora familiar e terapeuta integrativa. Meu propósito é criar espaços onde você possa se escutar, se reconhecer e se reconectar com a própria essência.
           </p>
           <NuxtLink to="/sobre-mim" class="btn-light mt-9">Conhecer a minha história</NuxtLink>
         </div>
@@ -167,18 +193,18 @@ const faqs = [
       <div class="container-page flex flex-col items-center gap-8 py-16 text-center md:flex-row md:justify-between md:text-left">
         <div class="max-w-2xl">
           <p class="eyebrow !text-lavender-dark">Mapa astral grátis</p>
-          <h2 class="mt-3 text-4xl leading-tight">Lorem ipsum: o seu Sol, a sua Lua e o seu Ascendente.</h2>
+          <h2 class="mt-3 text-4xl leading-tight">O seu Sol, a sua Lua e o seu Ascendente, de presente.</h2>
         </div>
         <NuxtLink to="/mapa-astral" class="btn-primary shrink-0">Quero o meu mapa grátis</NuxtLink>
       </div>
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section class="bg-white" aria-labelledby="depoimentos-titulo">
+    <section v-if="testimonials.length" class="bg-white" aria-labelledby="depoimentos-titulo">
       <div class="container-page py-20">
         <div class="text-center">
           <p class="eyebrow">Depoimentos</p>
-          <h2 id="depoimentos-titulo" class="section-title mt-3">Lorem ipsum dolor</h2>
+          <h2 id="depoimentos-titulo" class="section-title mt-3">Quem já passou por aqui</h2>
         </div>
         <div class="mt-12 grid gap-6 md:grid-cols-3">
           <figure v-for="t in testimonials" :key="t.name" class="flex flex-col rounded-3xl bg-ivory p-8">
@@ -204,6 +230,9 @@ const faqs = [
       </div>
     </section>
 
-    <CtaBand />
+    <CtaBand
+      title="Vamos olhar para a sua história?"
+      text="Escolha o atendimento e marque o seu horário, ou tire suas dúvidas comigo no WhatsApp."
+    />
   </div>
 </template>

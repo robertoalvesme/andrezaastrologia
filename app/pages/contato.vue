@@ -10,6 +10,7 @@ useSeoMeta({
 const site = useSite()
 const topics = [
   { label: 'Quero saber qual atendimento é para mim', message: 'Olá, Andreza! Quero ajuda para escolher o atendimento ideal para mim.' },
+  { label: 'Quero saber mais sobre a Constelação Familiar', message: 'Olá, Andreza! Quero saber mais sobre a Constelação Familiar.' },
   { label: 'Tenho uma dúvida sobre o meu pedido', message: 'Olá, Andreza! Tenho uma dúvida sobre o meu pedido.' },
   { label: 'Quero falar sobre parcerias', message: 'Olá, Andreza! Gostaria de conversar sobre uma parceria.' },
 ]
@@ -22,8 +23,8 @@ const topics = [
       <div class="container-page relative py-14 sm:py-20">
         <div class="max-w-2xl">
           <p class="eyebrow">Contato</p>
-          <h1 class="mt-5 text-5xl font-medium leading-[1] sm:text-6xl">Lorem ipsum, vamos <em class="font-normal text-coral">conversar</em>?</h1>
-          <p class="lead mt-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+          <h1 class="mt-5 text-5xl font-medium leading-[1] sm:text-6xl">Vamos <em class="font-normal text-coral">conversar</em>?</h1>
+          <p class="lead mt-6">Ficou em dúvida sobre qual atendimento combina com o seu momento? Me chame pelo WhatsApp, por e-mail ou no Instagram.</p>
         </div>
 
         <div class="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -57,7 +58,7 @@ const topics = [
             <a :href="site.instagram" target="_blank" rel="noopener" class="card group block">
               <p class="eyebrow">Instagram</p>
               <p class="mt-3 font-display text-2xl text-wine group-hover:text-coral">{{ site.instagramHandle }}</p>
-              <p class="mt-2 text-sm text-ink-soft">Lorem ipsum dolor sit amet, conteúdos e novidades.</p>
+              <p class="mt-2 text-sm text-ink-soft">Conteúdos sobre astrologia, tarot e autoconhecimento, e as novidades.</p>
             </a>
             <div class="card">
               <p class="eyebrow">Horário de atendimento</p>
@@ -72,7 +73,7 @@ const topics = [
     <section class="bg-ivory-deep">
       <div class="container-page flex flex-col items-center gap-6 py-14 text-center md:flex-row md:justify-between md:text-left">
         <div>
-          <h2 class="text-3xl leading-tight sm:text-4xl">Já sabe o que quer? Lorem ipsum.</h2>
+          <h2 class="text-3xl leading-tight sm:text-4xl">Já sabe o que quer?</h2>
           <p class="mt-2 text-ink-soft">Escolha o atendimento, pague com o Mercado Pago e marque o seu horário na hora.</p>
         </div>
         <NuxtLink to="/loja" class="btn-primary shrink-0">Ver os atendimentos</NuxtLink>
