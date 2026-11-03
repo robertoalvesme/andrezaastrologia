@@ -12,7 +12,8 @@ useSeoMeta({
 const site = useSite()
 const sampleOn = useState('site:sample-on', () => false)
 
-// Astrologia: os mapas, em cards de texto; Constelacao e Tarot: com foto e valor.
+// Astrologia: os mapas, em cards de texto; Constelacao e Tarot: com foto.
+// Nada de preco aqui: o valor e sempre o do produto cadastrado na loja.
 const astrology = [
   { icon: '☉', title: 'Mapa Astral', text: 'A foto do céu no momento do seu nascimento. Ajuda a compreender sua personalidade, missão de vida, relacionamentos e seus movimentos internos. Um convite para parar de tentar caber em expectativas externas e começar a compreender sua própria essência.' },
   { icon: '↻', title: 'Revolução Solar', text: 'O mapa do momento em que o Sol retorna à posição do seu nascimento, marcando um novo ciclo pessoal. Mostra os temas que podem ganhar destaque entre um aniversário e outro e as áreas da vida que merecem atenção.' },
@@ -25,14 +26,12 @@ const astrology = [
 const sessions = [
   {
     title: 'Constelação Familiar',
-    price: 'R$ 230,00',
     text: 'Um olhar para situações recorrentes sob uma nova perspectiva, reconhecendo a influência das relações em sua trajetória. Não se trata de procurar culpados, mas de reconhecer os vínculos da sua história e escolher o que deseja continuar carregando e o que deseja transformar.',
     image: '/img/constelacao.webp',
     alt: 'Andreza posicionando bonecos sobre um tabuleiro',
   },
   {
     title: 'Tarot',
-    price: 'R$ 130,00',
     text: 'O Tarot ajuda a organizar pensamentos, reconhecer sentimentos confusos e observar uma situação por ângulos diferentes. A leitura não traz previsão nem substitui suas decisões: é um espaço de escuta, reflexão e consciência para escolhas mais alinhadas com o que você deseja construir.',
     image: '/img/tarot-mesa.webp',
     alt: 'Andreza abrindo cartas de tarot sobre uma mesa de mármore',
@@ -124,7 +123,7 @@ const faqs = [
       </div>
     </section>
 
-    <!-- SESSOES: constelacao e tarot, com foto e valor -->
+    <!-- SESSOES: constelacao e tarot, com foto (o valor fica na loja) -->
     <section class="bg-ivory" aria-labelledby="sessoes-titulo">
       <div class="container-page py-20 sm:py-24">
         <div class="mx-auto max-w-2xl text-center">
@@ -137,11 +136,11 @@ const faqs = [
             <div class="arch aspect-[4/3] bg-ivory-deep sm:aspect-[5/4]">
               <img :src="s.image" :alt="s.alt" class="h-full w-full object-cover object-[50%_30%] transition-transform duration-700 group-hover:scale-105" loading="lazy" width="1000" height="1500">
             </div>
-            <p class="mt-6 text-xs font-medium uppercase tracking-[0.24em] text-gold-dark">Com horário marcado · {{ s.price }}</p>
+            <p class="mt-6 text-xs font-medium uppercase tracking-[0.24em] text-gold-dark">Com horário marcado</p>
             <h3 class="mt-2 text-3xl">{{ s.title }}</h3>
             <p class="mt-3 flex-1 leading-relaxed text-ink-soft">{{ s.text }}</p>
             <NuxtLink to="/loja" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-coral hover:text-coral-dark">
-              Agendar <span aria-hidden="true">→</span>
+              Ver valor e agendar <span aria-hidden="true">→</span>
             </NuxtLink>
           </article>
         </div>
