@@ -3,8 +3,8 @@
 export default defineAppConfig({
   site: {
     name: 'Andreza Astrologia',
-    whatsapp: '5500000000000',
-    whatsappLabel: '(00) 00000-0000',
+    whatsapp: '5515981341205',
+    whatsappLabel: '(15) 98134-1205',
     whatsappMessage: 'Olá, Andreza! Vim pelo site e quero saber mais sobre os atendimentos.',
     email: 'contato@andrezaastrologia.com.br',
     instagram: 'https://www.instagram.com/andrezaastrologia/',
